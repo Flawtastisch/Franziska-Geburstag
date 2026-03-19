@@ -75,10 +75,11 @@ export function Puzzle8() {
             {solved && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 border border-cave-wall bg-abyss p-6 text-center">
                  <p className="font-label font-normal text-[0.65rem] tracking-[0.35em] text-old-oak uppercase mb-5">SYSTEM VOLLSTÄNDIG WIEDERHERGESTELLT</p>
-                 <p className="mb-6 text-text-light">Die Ringe rasten ein. Ein tiefes Grollen erfüllt den Raum, als sich das Portal öffnet.</p>
-                <Button onClick={() => navigate('/finale')} fullWidth>
-                  [ DAS PORTAL BETRETEN ]
-                </Button>
+                 <p className="mb-6 text-text-light">Die Ringe rasten ein. Ein tiefes Grollen erfüllt den Raum, als sich das letzte Portal öffnet.</p>
+                 <div className="border border-cave-wall bg-abyss p-4 text-center mt-4">
+                  <p className="font-label text-[0.65rem] tracking-[0.2em] uppercase text-text-light mb-2">Letzter Schritt</p>
+                  <p className="text-old-oak text-sm">Finde und scanne den finalen QR-Code, um das Portal zu betreten.</p>
+                 </div>
               </motion.div>
             )}
           </motion.div>
