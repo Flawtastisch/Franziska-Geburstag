@@ -22,6 +22,7 @@ export function Puzzle1() {
     if (ans.trim().toUpperCase() === ANSWERS.puzzle1) {
       setSolved(true);
       setErrorVisible(false);
+      localStorage.setItem('unlocked_2', 'true');
     } else {
       setAttempts(a => a + 1);
       setErrorVisible(true);
@@ -68,9 +69,8 @@ export function Puzzle1() {
             <SuccessBox isVisible={solved} puzzleNum={1} quote="„Das Ende ist der Anfang und der Anfang ist das Ende.“" />
             
             {solved && (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 border border-cave-wall bg-abyss p-4 text-center">
-                <p className="font-label text-[0.65rem] tracking-[0.2em] uppercase text-text-light mb-2">System pausiert</p>
-                <p className="text-old-oak text-sm">Finde und scanne den QR-Code am nächsten Ort, um fortzufahren.</p>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 relative w-full flex justify-center">
+                <Button onClick={() => navigate('/2')}>[ KNOTEN STABILISIERT. WEITER. ]</Button>
               </motion.div>
             )}
           </motion.div>

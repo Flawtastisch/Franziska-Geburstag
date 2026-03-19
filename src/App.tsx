@@ -11,6 +11,7 @@ import { Puzzle6 } from './pages/Puzzle6';
 import { Puzzle7 } from './pages/Puzzle7';
 import { Puzzle8 } from './pages/Puzzle8';
 import { Finale } from './pages/Finale';
+import { UnlockedGuard } from './components/layout/UnlockedGuard';
 
 export default function App() {
   const [loading, setLoading] = useState(() => !sessionStorage.getItem('dark_loaded'));
@@ -29,15 +30,15 @@ export default function App() {
         <HashRouter>
           <Routes>
             <Route path="/" element={<Intro />} />
-            <Route path="/1" element={<Puzzle1 />} />
-            <Route path="/2" element={<Puzzle2 />} />
-            <Route path="/3" element={<Puzzle3 />} />
-            <Route path="/4" element={<Puzzle4 />} />
-            <Route path="/5" element={<Puzzle5 />} />
-            <Route path="/6" element={<Puzzle6 />} />
-            <Route path="/7" element={<Puzzle7 />} />
-            <Route path="/8" element={<Puzzle8 />} />
-            <Route path="/ende" element={<Finale />} />
+            <Route path="/1" element={<UnlockedGuard puzzleId="1"><Puzzle1 /></UnlockedGuard>} />
+            <Route path="/2" element={<UnlockedGuard puzzleId="2"><Puzzle2 /></UnlockedGuard>} />
+            <Route path="/3" element={<UnlockedGuard puzzleId="3"><Puzzle3 /></UnlockedGuard>} />
+            <Route path="/4" element={<UnlockedGuard puzzleId="4"><Puzzle4 /></UnlockedGuard>} />
+            <Route path="/5" element={<UnlockedGuard puzzleId="5"><Puzzle5 /></UnlockedGuard>} />
+            <Route path="/6" element={<UnlockedGuard puzzleId="6"><Puzzle6 /></UnlockedGuard>} />
+            <Route path="/7" element={<UnlockedGuard puzzleId="7"><Puzzle7 /></UnlockedGuard>} />
+            <Route path="/8" element={<UnlockedGuard puzzleId="8"><Puzzle8 /></UnlockedGuard>} />
+            <Route path="/finale" element={<UnlockedGuard puzzleId="finale"><Finale /></UnlockedGuard>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </HashRouter>

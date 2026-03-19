@@ -27,6 +27,7 @@ export function Puzzle8() {
     ) {
       setSolved(true);
       setErrorVisible(false);
+      localStorage.setItem('unlocked_finale', 'true');
     } else {
       setAttempts(a => a + 1);
       setErrorVisible(true);

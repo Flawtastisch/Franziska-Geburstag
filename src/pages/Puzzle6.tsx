@@ -23,6 +23,7 @@ export function Puzzle6() {
     if (ans.trim().toUpperCase() === ANSWERS.puzzle6) {
       setSolved(true);
       setErrorVisible(false);
+      localStorage.setItem('unlocked_7', 'true');
     } else {
       setAttempts(a => a + 1);
       setErrorVisible(true);

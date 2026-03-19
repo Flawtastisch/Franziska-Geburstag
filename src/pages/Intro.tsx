@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
@@ -5,6 +6,16 @@ import { Button } from '../components/ui/Button';
 
 export function Intro() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Wenn das erste Portal (Start) betreten wird, 
+    // setzen wir den Spielstand zurück, damit ein frischer Durchgang gesichert ist.
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith('unlocked_')) localStorage.removeItem(key);
+    });
+    // Rätsel 1 direkt freigeben, da es als erstes gefunden wird
+    localStorage.setItem('unlocked_1', 'true');
+  }, []);
 
   return (
     <Layout mode="centered">

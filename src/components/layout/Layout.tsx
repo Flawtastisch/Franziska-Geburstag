@@ -2,16 +2,6 @@ import { useEffect, useState } from 'react';
 // We don't need era-specific backgrounds anymore since the moodboard 
 // implies a unified consistent "Dark" theme across the whole site.
 export function Layout({ children, mode = 'puzzle' }: { children: React.ReactNode; mode?: 'puzzle' | 'centered' }) {
-  const [clickPos, setClickPos] = useState<{x: number, y: number, id: number} | null>(null);
-  
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      setClickPos({ x: e.clientX, y: e.clientY, id: Date.now() });
-      setTimeout(() => setClickPos(null), 250);
-    };
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
 
   return (
     <>
@@ -41,10 +31,7 @@ export function Layout({ children, mode = 'puzzle' }: { children: React.ReactNod
            style={{ background: 'repeating-linear-gradient(to bottom, transparent 0, transparent 3px, rgba(10, 8, 4, 0.4) 3px, rgba(10, 8, 4, 0.4) 6px)' }}
       />
       
-      {/* Click ripple flash */}
-      {clickPos && (
-        <div key={clickPos.id} className="fixed inset-0 bg-old-oak/5 pointer-events-none z-[99998] animate-shake" />
-      )}
+
 
       <div className="relative z-[2] w-full min-h-screen flex flex-col font-body text-old-oak">
         {mode === 'puzzle' ? (

@@ -40,6 +40,7 @@ export function Puzzle5() {
     setSolved(true);
     setAns('REISE');
     setErrorVisible(false);
+    localStorage.setItem('unlocked_6', 'true');
     setSelectedCells(correctSequence);
   };
 
