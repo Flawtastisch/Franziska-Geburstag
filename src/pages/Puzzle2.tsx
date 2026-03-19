@@ -109,7 +109,7 @@ export function Puzzle2() {
             />
             
             {!solved && (
-              <div className="flex gap-3 items-center mt-1">
+              <div className="flex flex-col sm:flex-row w-full gap-3 items-center mt-1">
                 <Button onClick={handleCheck}>BESTÄTIGEN</Button>
               </div>
             )}

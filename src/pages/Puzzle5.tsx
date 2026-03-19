@@ -146,7 +146,7 @@ export function Puzzle5() {
               Klicke die Buchstaben nacheinander an – oder tippe das Wort unten ein
             </p>
             
-            <div className="grid grid-cols-8 gap-[1px] bg-cave-wall/30 p-[1px] border border-cave-wall my-5 max-w-[340px] sm:max-w-full">
+            <div className="grid grid-cols-8 gap-[1px] bg-cave-wall/30 p-[1px] border border-cave-wall my-5 w-[90vw] max-w-[340px]">
               {gridLetters.map((row, r) => row.map((char, c) => {
                 const isSelected = selectedCells.some(cell => cell.r === r && cell.c === c);
                 const isCorrect = solved && correctSequence.some(p => p.r === r && p.c === c);
@@ -168,7 +168,7 @@ export function Puzzle5() {
               }))}
             </div>
             
-            <div className="flex gap-3 items-stretch mt-4 w-full">
+            <div className="flex flex-col sm:flex-row w-full gap-3 items-stretch mt-4 w-full">
               <Input 
                 value={ans}
                 onChange={e => setAns(e.target.value)}
@@ -179,7 +179,7 @@ export function Puzzle5() {
                 onKeyDown={e => e.key === 'Enter' && !solved && handleInputSubmit()}
               />
               {!solved && (
-                <Button className="mt-0 whitespace-nowrap" onClick={handleInputSubmit}>SENDEN</Button>
+                <Button className="mt-0 w-full sm:w-auto whitespace-nowrap" onClick={handleInputSubmit}>SENDEN</Button>
               )}
             </div>
           </motion.div>

@@ -95,7 +95,7 @@ export function Puzzle4() {
               14 &nbsp;·&nbsp; 1 &nbsp;·&nbsp; 3 &nbsp;·&nbsp; 8 &nbsp;·&nbsp; 20
             </div>
             
-            <div className="flex gap-3 items-stretch mt-0 w-full">
+            <div className="flex flex-col sm:flex-row w-full gap-3 items-stretch mt-0 w-full">
               <Input 
                 value={ans}
                 onChange={e => setAns(e.target.value)}
@@ -106,13 +106,13 @@ export function Puzzle4() {
                 onKeyDown={e => e.key === 'Enter' && !solved && handleCheck()}
               />
               {!solved && (
-                <Button className="mt-0 whitespace-nowrap" onClick={handleCheck}>SENDEN</Button>
+                <Button className="mt-0 w-full sm:w-auto whitespace-nowrap" onClick={handleCheck}>SENDEN</Button>
               )}
             </div>
           </motion.div>
           
           <motion.svg variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} 
-            className="absolute pointer-events-none opacity-[0.1] text-old-oak w-[160px] bottom-[40px] right-[20px]" 
+            className="absolute pointer-events-none opacity-[0.1] text-old-oak hidden md:block w-[160px] bottom-[40px] right-[20px]" 
             viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8">
             <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="40"/>
             <polygon points="50,16 54,50 50,40 46,50"/><polygon points="50,84 54,50 50,60 46,50"/>

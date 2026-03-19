@@ -52,7 +52,7 @@ export function ComboLock({ value, onChange, solved, errorShake }: ComboLockProp
             {/* Drum inner */}
             <div 
               className="absolute w-full top-0 transition-transform duration-150 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              style={{ transform: `translateY(-${w * 38}px)` }}
+              style={{ transform: `translateY(${38 - w * 38}px)` }}
             >
               {[...ALPHABET].map((char, i) => (
                 <div 

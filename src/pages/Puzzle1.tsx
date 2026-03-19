@@ -79,7 +79,7 @@ export function Puzzle1() {
         <PuzzleRight>
           <motion.div variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} className="w-full">
             <p className="font-label font-normal text-[0.65rem] tracking-[0.3em] text-text-muted text-left mb-3 uppercase">PASSWORT ERFORDERLICH</p>
-            <div className="flex gap-3 items-stretch mt-0 w-full">
+            <div className="flex flex-col sm:flex-row w-full gap-3 items-stretch mt-0 w-full">
               <Input 
                 value={ans}
                 onChange={e => setAns(e.target.value)}
@@ -90,13 +90,13 @@ export function Puzzle1() {
                 onKeyDown={e => e.key === 'Enter' && !solved && handleCheck()}
               />
               {!solved && (
-                <Button className="mt-0 whitespace-nowrap" onClick={handleCheck}>SENDEN</Button>
+                <Button className="mt-0 w-full sm:w-auto whitespace-nowrap" onClick={handleCheck}>SENDEN</Button>
               )}
             </div>
           </motion.div>
           
           <motion.svg variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} 
-            className="absolute pointer-events-none opacity-[0.1] text-old-oak w-[140px] bottom-[40px] right-[20px]" 
+            className="absolute pointer-events-none opacity-[0.1] text-old-oak hidden md:block w-[140px] bottom-[40px] right-[20px]" 
             viewBox="0 0 100 140" fill="none" stroke="currentColor" strokeWidth="0.8">
             <path d="M40 20 Q50 0 60 20 L65 50 Q75 80 50 100 Q25 80 35 50 Z" />
             <path d="M45 100 L45 110 M55 100 L55 110" />

@@ -50,7 +50,7 @@ export function Layout({ children, mode = 'puzzle' }: { children: React.ReactNod
 
 export function PuzzleLeft({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative p-[40px_24px] lg:p-[70px_60px] min-h-auto md:min-h-screen border-b md:border-b-0 md:border-r border-cave-wall flex flex-col justify-center items-center md:items-start text-center md:text-left bg-abyss/40 backdrop-blur-sm">
+    <div className="relative p-[40px_24px] lg:p-[70px_60px] min-h-[50vh] md:min-h-screen border-b md:border-b-0 md:border-r border-cave-wall flex flex-col justify-center items-center md:items-start text-center md:text-left bg-abyss/40 backdrop-blur-sm">
       <div className="w-full max-w-[500px] mx-auto md:mx-0">
         {children}
       </div>
@@ -60,7 +60,7 @@ export function PuzzleLeft({ children }: { children: React.ReactNode }) {
 
 export function PuzzleRight({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative p-[40px_24px] lg:p-[70px_80px] min-h-auto md:min-h-screen flex flex-col justify-center items-center text-center w-full">
+    <div className="relative p-[40px_24px] lg:p-[70px_80px] min-h-[50vh] md:min-h-screen flex flex-col justify-center items-center text-center w-full">
       <div className="w-full max-w-[650px] flex flex-col items-center">
         {children}
       </div>

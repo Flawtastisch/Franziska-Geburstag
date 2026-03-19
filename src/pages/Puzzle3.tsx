@@ -94,7 +94,7 @@ export function Puzzle3() {
               </span>
             </div>
             
-            <div className="flex gap-3 items-stretch mt-0 w-full">
+            <div className="flex flex-col sm:flex-row w-full gap-3 items-stretch mt-0 w-full">
               <Input 
                 value={ans}
                 onChange={e => setAns(e.target.value)}
@@ -105,13 +105,13 @@ export function Puzzle3() {
                 onKeyDown={e => e.key === 'Enter' && !solved && handleCheck()}
               />
               {!solved && (
-                <Button className="mt-0 whitespace-nowrap" onClick={handleCheck}>SENDEN</Button>
+                <Button className="mt-0 w-full sm:w-auto whitespace-nowrap" onClick={handleCheck}>SENDEN</Button>
               )}
             </div>
           </motion.div>
           
           <motion.svg variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} 
-            className="absolute pointer-events-none opacity-[0.1] text-old-oak w-[160px] bottom-[40px] right-[20px]" 
+            className="absolute pointer-events-none opacity-[0.1] text-old-oak hidden md:block w-[160px] bottom-[40px] right-[20px]" 
             viewBox="0 0 100 120" fill="none" stroke="currentColor" strokeWidth="0.8">
             <path d="M10 120 L10 50 Q50 5 90 50 L90 120"/>
             <path d="M25 120 L25 58 Q50 25 75 58 L75 120"/>
