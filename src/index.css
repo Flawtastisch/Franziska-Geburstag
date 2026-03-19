@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=PT+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html, body {
+    min-height: 100%;
+    background: var(--abyss);
+    color: var(--old-oak);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0804;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a2a18;
+  }
+  :root {
+    --abyss: #0a0804;
+    --old-oak: #987654;
+    --ember: #df6c4f;
+    --cave-wall: #3a2a18;
+  }
+}
