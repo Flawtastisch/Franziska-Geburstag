@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "npx serve (static)",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "npx serve . --listen 3000 --no-clipboard"],
+      "port": 3000
+    },
+    {
+      "name": "python http.server",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8000"],
+      "port": 8000
+    }
+  ]
+}
