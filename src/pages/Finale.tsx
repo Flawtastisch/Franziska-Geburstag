@@ -65,15 +65,31 @@ export function Finale() {
             
             <hr className="w-16 h-[1px] bg-ember border-none mx-auto my-8 opacity-70" />
             
-            <p className="font-body text-[1.1rem] leading-[2] text-text-light mb-8 max-w-[400px] mx-auto">
-              Du hast das Rätsel entschlüsselt, die Knoten gelöst und den Ursprung gefunden. 
-              <br/><br/>
-              Auf ein neues, grenzenloses Kapitel in deiner Zeitlinie.
-            </p>
-            
-            <p className="font-serif italic text-text-muted text-[0.95rem]">
-              Sic mundus creatus est.
-            </p>
+            <div className="font-body text-[1rem] sm:text-[1.1rem] leading-[1.8] text-text-light mb-8 max-w-[600px] mx-auto text-left space-y-5">
+              <p>Hallo Möhrchen,</p>
+              <p>
+                wenn du das liest, hast du alle Rätsel gelöst und meine Website hat funktioniert (:
+                <br />
+                Ich hoffe, es hat dir Spaß gemacht und du freust dich schon. Bevor wir losfahren, möchte ich dir noch was sagen.
+              </p>
+              <p>
+                Du bist mein Wunsch von allen Geburtstagskerzen, die ich je ausgepustet habe. Jede Wimper, die ich fallen lassen habe, bei der ich mir was gewünscht habe. Jeder Regenbogen, den ich nach dem Regen am Himmel sah. Jede Sternschnuppe im All und das einzige 4-blättrige Kleeblatt, was ich jemals gefunden habe.
+              </p>
+              <p>
+                Ich bin soooo unendlich dankbar, dass ich dich gefunden habe. Wir sind jetzt fast 1 Jahr zusammen und die Zeit verging wie im Flug.
+              </p>
+              <p>
+                Ich freue mich auf jeden Moment mit dir und träume schon von der Zukunft, in der wir nebeneinander einschlafen können. Es dauert auch nicht mehr lang, weil schon bald ziehst du um. Nicht einfach um... nicht einfach in ein anderes Haus oder Wohnung. Du ziehst zu mir! Ich weiß, dass jeder Schritt schwer ist und auch schwer bleibt bis im neuen Haus endlich alles fertig ist - und ja es läuft nicht immer alles so nach Plan. Zugegebenermaßen sind wir ziemlich von unserem Zeitplan abgekommen, weil das Renovieren so lang gedauert hat - Aber wir schaffen das!
+              </p>
+              <p>
+                Zu guter Letzt habe ich noch ein Geschenk für dich. Ich hoffe, es gefällt dir und hilft dir auf deinen ersten Schritten deiner neuen Ausbildung.
+              </p>
+              <p className="font-serif text-[1.2rem] italic text-center mt-12 text-old-oak">
+                Ich bin stolz auf dich und liebe dich über alles.
+                <br /><br />
+                Tom &lt;3
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

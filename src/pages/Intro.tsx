@@ -8,6 +8,9 @@ export function Intro() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (localStorage.getItem('admin_mode') === 'true') {
+      return;
+    }
     // Wenn das erste Portal (Start) betreten wird, 
     // setzen wir den Spielstand zurück, damit ein frischer Durchgang gesichert ist.
     Object.keys(localStorage).forEach(key => {
@@ -16,6 +19,27 @@ export function Intro() {
     // Rätsel 1 direkt freigeben, da es als erstes gefunden wird
     localStorage.setItem('unlocked_1', 'true');
   }, []);
+
+  const handleAdminLogin = () => {
+    const pw = prompt("Spielleiter-Passwort eingeben:");
+    if (pw === "spielleiter") {
+      localStorage.setItem('admin_mode', 'true');
+      for (let i = 1; i <= 8; i++) {
+        localStorage.setItem(`unlocked_${i}`, 'true');
+      }
+      localStorage.setItem('unlocked_finale', 'true');
+      alert("Spielleiter-Modus aktiviert! Alle Rätsel und das Finale sind freigeschaltet.");
+    } else if (pw === "reset") {
+      localStorage.removeItem('admin_mode');
+      Object.keys(localStorage).forEach(key => {
+        if (key.startsWith('unlocked_')) localStorage.removeItem(key);
+      });
+      localStorage.setItem('unlocked_1', 'true');
+      alert("Spielleiter-Modus deaktiviert. Spielstand wurde zurückgesetzt.");
+    } else if (pw !== null) {
+      alert("Falsches Passwort.");
+    }
+  };
 
   return (
     <Layout mode="centered">
@@ -80,10 +104,14 @@ export function Intro() {
           className="mt-14"
         >
           {/* Subtle moodboard circles inline visual */}
-          <div className="relative w-[120px] h-[120px] mx-auto opacity-40">
-            <div className="absolute inset-2 border border-cave-wall rounded-full" />
-            <div className="absolute inset-6 border border-cave-wall rounded-full" />
-            <div className="absolute inset-10 border border-old-oak/50 rounded-full flex items-center justify-center font-serif text-old-oak text-xs">∞</div>
+          <div 
+            className="relative w-[120px] h-[120px] mx-auto opacity-40 cursor-pointer hover:opacity-100 transition-opacity"
+            onDoubleClick={handleAdminLogin}
+            title="Versteckter Bereich"
+          >
+            <div className="absolute inset-2 border border-cave-wall rounded-full pointer-events-none" />
+            <div className="absolute inset-6 border border-cave-wall rounded-full pointer-events-none" />
+            <div className="absolute inset-10 border border-old-oak/50 rounded-full flex items-center justify-center font-serif text-old-oak text-xs pointer-events-none">∞</div>
           </div>
         </motion.div>
       </motion.div>
